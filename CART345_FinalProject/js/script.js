@@ -50,6 +50,18 @@ let IWANTTHIS = ['I', 'WANT', 'THIS'];
 let INMYOPINION = ['IN', 'MY', 'OPINION'];
 let IDISAGREE = ['I', 'DISAGREE'];
 
+// Annyang commands
+let speech = {
+  'i am sorry': iAmSorrySaid,
+  'i was wrong': iWasWrongSaid,
+  'i love you': iLoveYouSaid,
+  'i need help': iNeedHelpSaid,
+  'please stop': pleaseStopSaid,
+  'i want this': iWantThisSaid,
+  'in my opinion': inMyOpinionSaid,
+  'i disagree': iDisagreeSaid
+}
+
 
 $(document).ready(setup);
 
@@ -57,6 +69,13 @@ $(document).ready(setup);
 //
 // Display of the words. They move accros the screen
 function setup() {
+
+  // Setup annyang
+  if (annyang) {
+    annyang.addCommands(speech);
+    annyang.start();
+  }
+
   // I
   wordObjects.push(new Word(100, 0, 1, 0, "I", 150, 0));
   // AM
@@ -152,7 +171,7 @@ function setup() {
 // Clear Screen
 //
 // When a sentence is formed, the screen will
-// fade into white with the sentence displayed 
+// fade into white with the sentence displayed
 function clearScreen() {
 
   if (JSON.stringify(outputArray) === JSON.stringify(IAMSORRY)) {
@@ -181,4 +200,43 @@ function clearScreen() {
     $sentenceDisplayed.text("I DISAGREE");
     $clearScreen.fadeIn('slow');
   }
+}
+
+
+// Functions for annyang commands
+//
+// This allows the screen to fade into white
+// with the sentence displayed when participant
+// speaks
+function iAmSorrySaid(){
+  $sentenceDisplayed.text("I AM SORRY");
+  $clearScreen.fadeIn('slow');
+}
+function iWasWrongSaid(){
+  $sentenceDisplayed.text("I WAS WRONG");
+  $clearScreen.fadeIn('slow');
+}
+function iLoveYouSaid(){
+  $sentenceDisplayed.text("I LOVE YOU");
+  $clearScreen.fadeIn('slow');
+}
+function iNeedHelpSaid(){
+  $sentenceDisplayed.text("I NEED HELP");
+  $clearScreen.fadeIn('slow');
+}
+function pleaseStopSaid(){
+  $sentenceDisplayed.text("PLEASE STOP");
+  $clearScreen.fadeIn('slow');
+}
+function iWantThisSaid(){
+  $sentenceDisplayed.text("I WANT THIS");
+  $clearScreen.fadeIn('slow');
+}
+function inMyOpinionSaid(){
+  $sentenceDisplayed.text("IN MY OPINION");
+  $clearScreen.fadeIn('slow');
+}
+function iDisagreeSaid(){
+  $sentenceDisplayed.text("I DISAGREE");
+  $clearScreen.fadeIn('slow');
 }
