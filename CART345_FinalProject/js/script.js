@@ -7,7 +7,6 @@ Lilia Isabel Aguirre Lugo
 
 CART345 Final Project
 
-
 ******************/
 
 // Array
@@ -36,6 +35,9 @@ let wordDisagree;
 let $droppableBox;
 let $clearScreen;
 
+let outputArray = [];
+let IAMSORRY = ['I', 'AM', 'SORRY'];
+let IWASWRONG = ['I', 'WAS', 'WRONG'];
 
 
 $(document).ready(setup);
@@ -46,14 +48,14 @@ $(document).ready(setup);
 
 function setup() {
   // I
-  wordI = new Word(100, 0, 1, 0, "I", 150, 0);
-  wordObjects.push(wordI);
+  // wordI = new Word(100, 0, 1, 0, "I", 150, 0);
+  wordObjects.push(new Word(100, 0, 1, 0, "I", 150, 0));
   // AM
-  wordAm = new Word(500, -100, -1, 0, "AM", 150, 1);
-  wordObjects.push(wordAm);
+  // wordAm = new Word(500, -100, -1, 0, "AM", 150, 1);
+  wordObjects.push(new Word(500, -100, -1, 0, "AM", 150, 1));
   // SORRY
-  wordSorry = new Word(990, 50, 1, 0, "SORRY", 150, 2);
-  wordObjects.push(wordSorry);
+  // wordSorry = new Word(990, 50, 1, 0, "SORRY", 150, 2);
+  wordObjects.push(new Word(990, 50, 1, 0, "SORRY", 150, 2));
   // WAS
   wordWas = new Word(105, 142, -1, 0, "WAS", 150, 3);
   wordObjects.push(wordWas);
@@ -108,30 +110,32 @@ function setup() {
 
   $droppableBox.droppable({
 
-    drop: function(ev, ui) {
+    drop: function (ev, ui) {
       console.log("someone dropped");
       //the who
+      outputArray.push(ui.draggable[0].textContent);
       let id = parseInt(ui.draggable[0].id);
       wordObjects[id].textPosition();
+      clearScreen();
     }
   })
 
   // Draggable
   $(".draggableBox").draggable({
     //start..
-    start: function(event, ui) {
+    start: function (event, ui) {
       console.log("start dragging");
       //  console.log(event);
       //  console.log(ui);
 
     },
     //stop..
-    stop: function(event, ui) {
+    stop: function (event, ui) {
       console.log("stop dragging");
       //the who
       //  console.log(ui.helper.context)
     },
-    drag: function(event, ui) {
+    drag: function (event, ui) {
       //  console.log("continuos");
     }
 
@@ -158,9 +162,17 @@ function sentenceFormed() {
 
 }
 
-// function clearScreen() {
-//
-// if ( id = ){
-//   $clearScreen.show();
-// }
-//   }
+function clearScreen() {
+
+  if (JSON.stringify(outputArray) === JSON.stringify(IAMSORRY)) {
+    $clearScreen.show();
+    $('#clearedSentence').html(JSON.stringify(outputArray));
+  }
+  else if (JSON.stringify(outputArray) === JSON.stringify(IWASWRONG)) {
+    $clearScreen.show();
+  }
+  // if (id = ) {
+  //   $clearScreen.show();
+  // }
+
+}
