@@ -13,6 +13,7 @@ CART345 Final Project
 let wordObjects = [];
 
 // Word objects
+// All words are here
 let wordI;
 let wordAm;
 let wordSorry;
@@ -34,10 +35,20 @@ let wordDisagree;
 // div
 let $droppableBox;
 let $clearScreen;
+// p
+let $sentenceDisplayed;
 
+// Output array
+// Potential sentences
 let outputArray = [];
 let IAMSORRY = ['I', 'AM', 'SORRY'];
 let IWASWRONG = ['I', 'WAS', 'WRONG'];
+let ILOVEYOU = ['I', 'LOVE', 'YOU'];
+let INEEDHELP = ['I', 'NEED', 'HELP'];
+let PLEASESTOP = ['PLEASE', 'STOP'];
+let IWANTTHIS = ['I', 'WANT', 'THIS'];
+let INMYOPINION = ['IN', 'MY', 'OPINION'];
+let IDISAGREE = ['I', 'DISAGREE'];
 
 
 $(document).ready(setup);
@@ -45,73 +56,58 @@ $(document).ready(setup);
 // setup()
 //
 // Display of the words. They move accros the screen
-
 function setup() {
   // I
-  // wordI = new Word(100, 0, 1, 0, "I", 150, 0);
   wordObjects.push(new Word(100, 0, 1, 0, "I", 150, 0));
   // AM
-  // wordAm = new Word(500, -100, -1, 0, "AM", 150, 1);
   wordObjects.push(new Word(500, -100, -1, 0, "AM", 150, 1));
   // SORRY
-  // wordSorry = new Word(990, 50, 1, 0, "SORRY", 150, 2);
   wordObjects.push(new Word(990, 50, 1, 0, "SORRY", 150, 2));
   // WAS
-  wordWas = new Word(105, 142, -1, 0, "WAS", 150, 3);
-  wordObjects.push(wordWas);
+  wordObjects.push(new Word(105, 142, -1, 0, "WAS", 150, 3));
   // WRONG
-  wordWrong = new Word(900, -187, 1, 0, "WRONG", 150, 4);
-  wordObjects.push(wordWrong);
+  wordObjects.push(new Word(900, -187, 1, 0, "WRONG", 150, 4));
   // LOVE
-  wordLove = new Word(0, -50, -1, 0, "LOVE", 150, 5);
-  wordObjects.push(wordLove);
+  wordObjects.push(new Word(0, -50, -1, 0, "LOVE", 150, 5));
   // YOU
-  wordYou = new Word(1000, 0, 1, 0, "YOU", 150, 6);
-  wordObjects.push(wordYou);
+  wordObjects.push(new Word(1000, 0, 1, 0, "YOU", 150, 6));
   // NEED
-  wordNeed = new Word(-8, 45, -1, 0, "NEED", 150, 7);
-  wordObjects.push(wordNeed);
+  wordObjects.push(new Word(-8, 45, -1, 0, "NEED", 150, 7));
   // HELP
-  wordHelp = new Word(580, 0, 1, 0, "HELP", 150, 8);
-  wordObjects.push(wordHelp);
+  wordObjects.push(new Word(580, 0, 1, 0, "HELP", 150, 8));
   // PLEASE
-  wordPlease = new Word(700, 142, -1, 0, "PLEASE", 150, 9);
-  wordObjects.push(wordPlease);
+  wordObjects.push(new Word(700, 142, -1, 0, "PLEASE", 150, 9));
   // STOP
-  wordStop = new Word(-8, -187, 1, 0, "STOP", 150, 10);
-  wordObjects.push(wordStop);
+  wordObjects.push(new Word(-8, -187, 1, 0, "STOP", 150, 10));
   // WANT
-  wordWant = new Word(500, -140, -1, 0, "WANT", 150, 11);
-  wordObjects.push(wordWant);
+  wordObjects.push(new Word(500, -140, -1, 0, "WANT", 150, 11));
   // THIS
-  wordThis = new Word(300, 100, 1, 0, "THIS", 150, 12);
-  wordObjects.push(wordThis);
+  wordObjects.push(new Word(300, 100, 1, 0, "THIS", 150, 12));
   // IN
-  wordIn = new Word(1380, 142, -1, 0, "IN", 150, 13);
-  wordObjects.push(wordIn);
+  wordObjects.push(new Word(1380, 142, -1, 0, "IN", 150, 13));
   // MY
-  wordMy = new Word(300, -187, 1, 0, "MY", 150, 14);
-  wordObjects.push(wordMy);
+  wordObjects.push(new Word(300, -187, 1, 0, "MY", 150, 14));
   // OPINION
-  wordOpinion = new Word(800, -50, -1, 0, "OPINION", 150, 15);
-  wordObjects.push(wordOpinion);
+  wordObjects.push(new Word(800, -50, -1, 0, "OPINION", 150, 15));
   // DISAGREE
-  wordDisagree = new Word(700, -140, 1, 0, "DISAGREE", 150, 16);
-  wordObjects.push(wordDisagree);
+  wordObjects.push(new Word(700, -140, 1, 0, "DISAGREE", 150, 16));
 
 
 
   //Clear Screen Variable
   $clearScreen = $("#cleared");
+  // Display sentence
+  $sentenceDisplayed = $("#sentenceDisplay");
+  // Hide
   $clearScreen.hide();
 
   // Droppable Box Variable
   $droppableBox = $("#droppable");
 
-  $droppableBox.droppable({
 
-    drop: function (ev, ui) {
-      console.log("someone dropped");
+  // Make box droppable
+  $droppableBox.droppable({
+    drop: function(ev, ui) {
       //the who
       outputArray.push(ui.draggable[0].textContent);
       let id = parseInt(ui.draggable[0].id);
@@ -120,26 +116,24 @@ function setup() {
     }
   })
 
-  // Draggable
+  // Make words draggable
   $(".draggableBox").draggable({
     //start..
-    start: function (event, ui) {
-      console.log("start dragging");
+    start: function(event, ui) {
       //  console.log(event);
       //  console.log(ui);
-
     },
     //stop..
-    stop: function (event, ui) {
-      console.log("stop dragging");
+    stop: function(event, ui) {
       //the who
       //  console.log(ui.helper.context)
     },
-    drag: function (event, ui) {
+    drag: function(event, ui) {
       //  console.log("continuos");
     }
 
   });
+
 
   // Loop
   //
@@ -154,25 +148,37 @@ function setup() {
   requestAnimationFrame(loop);
 }
 
-function sentenceFormed() {
-  if (id = wordObjects[0] + wordObjects[1] + wordObjects[2]) {
 
-
-  }
-
-}
-
+// Clear Screen
+//
+// When a sentence is formed, the screen will
+// fade into white with the sentence displayed 
 function clearScreen() {
 
   if (JSON.stringify(outputArray) === JSON.stringify(IAMSORRY)) {
-    $clearScreen.show();
-    $('#clearedSentence').html(JSON.stringify(outputArray));
+    $sentenceDisplayed.text("I AM SORRY");
+    $clearScreen.fadeIn('slow');
+    // $('#clearedSentence').html(JSON.stringify(outputArray));
+  } else if (JSON.stringify(outputArray) === JSON.stringify(IWASWRONG)) {
+    $sentenceDisplayed.text("I WAS WRONG");
+    $clearScreen.fadeIn('slow');
+  } else if (JSON.stringify(outputArray) === JSON.stringify(ILOVEYOU)) {
+    $sentenceDisplayed.text("I LOVE YOU");
+    $clearScreen.fadeIn('slow');
+  } else if (JSON.stringify(outputArray) === JSON.stringify(INEEDHELP)) {
+    $sentenceDisplayed.text("I NEED HELP");
+    $clearScreen.fadeIn('slow');
+  } else if (JSON.stringify(outputArray) === JSON.stringify(PLEASESTOP)) {
+    $sentenceDisplayed.text("PLEASE STOP");
+    $clearScreen.fadeIn('slow');
+  } else if (JSON.stringify(outputArray) === JSON.stringify(IWANTTHIS)) {
+    $sentenceDisplayed.text("I WANT THIS");
+    $clearScreen.fadeIn('slow');
+  } else if (JSON.stringify(outputArray) === JSON.stringify(INMYOPINION)) {
+    $sentenceDisplayed.text("IN MY OPINION");
+    $clearScreen.fadeIn('slow');
+  } else if (JSON.stringify(outputArray) === JSON.stringify(IDISAGREE)) {
+    $sentenceDisplayed.text("I DISAGREE");
+    $clearScreen.fadeIn('slow');
   }
-  else if (JSON.stringify(outputArray) === JSON.stringify(IWASWRONG)) {
-    $clearScreen.show();
-  }
-  // if (id = ) {
-  //   $clearScreen.show();
-  // }
-
 }

@@ -11,6 +11,8 @@ body {
   overflow: hidden;
 }
 
+
+
 .draggableBox {
   position: absolute;
   z-index: 3;
@@ -47,4 +49,10 @@ body {
   z-index: 4;
   width: 100vw;
   height: 100vh;
+}
+
+#sentenceDisplay {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 40vh;
 }
