@@ -41,6 +41,22 @@ class Word {
     $(this.htmlElementWord[0]).addClass('styleBox');
   }
 
+// Reset
+// 
+  reset(){
+    this.htmlElementWord = $('<p>');
+    $(this.htmlElementWord).text(this.text);
+    $(this.htmlElementWord).attr("id", this.index);
+    $(this.htmlElementWord).addClass('draggableBox');
+    $(this.htmlElementWord).appendTo('#background');
+    $(this.htmlElementWord).css({
+      top: this.y + "px"
+    });
+    $(this.htmlElementWord).css({
+      left: this.x + "px"
+    });
+  }
+
   // Move
   //
   move() {

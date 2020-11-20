@@ -11,7 +11,15 @@ body {
   overflow: hidden;
 }
 
+#titleScreen{
+  background: white;
+  color: black;
+  position: absolute;
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
 
+}
 
 .draggableBox {
   position: absolute;
@@ -44,7 +52,7 @@ body {
 
 #cleared {
   background: white;
-  color:black;
+  color: black;
   position: absolute;
   z-index: 4;
   width: 100vw;
