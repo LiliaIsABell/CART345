@@ -13,14 +13,44 @@ body {
 
 #titleScreen{
   background: white;
-  color: black;
   position: absolute;
   z-index: 4;
   width: 100vw;
   height: 100vh;
-
 }
 
+#start{
+  text-align: center;
+  font-size: 40px;
+  margin-top: 70vh;
+}
+
+#title{
+  text-align: center;
+  font-size: 50px;
+}
+
+#presentation{
+  text-align: center;
+  text-align:justify;
+  position: absolute;
+  z-index: 3;
+  margin-left:40px;
+  margin-right: 55vw;
+  font-size: 20px;
+  text-indent: 20px;
+}
+
+#instructions{
+  text-align: center;
+  text-align:justify;
+  position: absolute;
+  z-index: 3;
+  margin-left:50vw;
+  margin-right: 40px;
+  font-size: 20px;
+  text-indent: 20px;
+}
 .draggableBox {
   position: absolute;
   z-index: 3;

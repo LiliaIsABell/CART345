@@ -183,7 +183,6 @@ function clearScreen() {
   if (JSON.stringify(outputArray) === JSON.stringify(IAMSORRY)) {
     $sentenceDisplayed.text("I AM SORRY");
     $clearScreen.fadeIn('slow');
-    // $('#clearedSentence').html(JSON.stringify(outputArray));
   } else if (JSON.stringify(outputArray) === JSON.stringify(IWASWRONG)) {
     $sentenceDisplayed.text("I WAS WRONG");
     $clearScreen.fadeIn('slow');
