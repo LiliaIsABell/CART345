@@ -12,25 +12,25 @@ CART345 Final Project
 // Array
 let wordObjects = [];
 
-// Word objects
-// All words are here
-let wordI;
-let wordAm;
-let wordSorry;
-let wordWas;
-let wordWrong;
-let wordLove;
-let wordYou;
-let wordNeed;
-let wordHelp;
-let wordPlease;
-let wordStop;
-let wordWant;
-let wordThis;
-let wordIn;
-let wordMy;
-let wordOpinion;
-let wordDisagree;
+// // Word objects
+// // All words are here
+// let wordI;
+// let wordAm;
+// let wordSorry;
+// let wordWas;
+// let wordWrong;
+// let wordLove;
+// let wordYou;
+// let wordNeed;
+// let wordHelp;
+// let wordPlease;
+// let wordStop;
+// let wordWant;
+// let wordThis;
+// let wordIn;
+// let wordMy;
+// let wordOpinion;
+// let wordDisagree;
 
 // div
 let $droppableBox;
@@ -104,7 +104,7 @@ function setup() {
     wordObjects.push(new Word(100, 0, 1, 0, "I", 150, 0));
     // AM
     wordObjects.push(new Word(500, -100, -1, 0, "AM", 1050, 1));
-    // SORRY
+    // // SORRY
     wordObjects.push(new Word(990, 50, 1, 0, "SORRY", 800, 2));
     // WAS
     wordObjects.push(new Word(105, 142, -5, 0, "WAS", 1050, 3));
@@ -119,11 +119,11 @@ function setup() {
     // HELP
     wordObjects.push(new Word(580, 0, 3, 0, "HELP", 3000, 8));
     // PLEASE
-    wordObjects.push(new Word(700, 142, -3, 0, "PLEASE", 3000, 9));
+    wordObjects.push(new Word(700, 160, -3, 0, "PLEASE", 3000, 9));
     // STOP
     wordObjects.push(new Word(-8, -187, 1, 0, "STOP", 800, 10));
     // WANT
-    wordObjects.push(new Word(500, -140, -5, 0, "WANT", 1050, 11));
+    wordObjects.push(new Word(500, -140, -3, 0, "WANT", 1050, 11));
     // THIS
     wordObjects.push(new Word(300, 100, 1, 0, "THIS", 1050, 12));
     // IN
@@ -134,6 +134,25 @@ function setup() {
     wordObjects.push(new Word(800, -50, -3, 0, "OPINION", 3000, 15));
     // DISAGREE
     wordObjects.push(new Word(700, -140, 3, 0, "DISAGREE", 3000, 16));
+
+    // Decoy
+    wordObjects.push(new Word(0, -70, 10, 0, "DO", 1050, 0));
+    wordObjects.push(new Word(450, -187, -5, 0, "NOT", 1050, 1));
+    wordObjects.push(new Word(990, 10, -10, 0, "KNOW", 800, 2));
+    wordObjects.push(new Word(105, 160, -10, 0, "HOW", 1050, 3));
+    wordObjects.push(new Word(900, -140, -10, 0, "TO", 3000, 4));
+    wordObjects.push(new Word(0, -10, -5, 0, "SURE", 800, 5));
+    wordObjects.push(new Word(1000, 0, -1, 0, "IS", 1050, 6));
+    wordObjects.push(new Word(-8, 70, -10, 0, "IT", 1050, 7));
+    wordObjects.push(new Word(580, 40, -5, 0, "INCORRECT", 3000, 8));
+    wordObjects.push(new Word(700, 110, -1, 0, "UNSURE", 3000, 9));
+    wordObjects.push(new Word(-8, -110, -10, 0, "INSECURE", 800, 10));
+    wordObjects.push(new Word(500, -120, 1, 0, "IMPOSTER", 1050, 11));
+    wordObjects.push(new Word(300, 140, 10, 0, "FRAUD", 1050, 12));
+    wordObjects.push(new Word(1380, 142, -1, 0, "UNFORGIVABLE", 1050, 13));
+    wordObjects.push(new Word(300, -187, 10, 0, "CAN", 1050, 14));
+    wordObjects.push(new Word(800, -50, -1, 0, "LIAR", 3000, 15));
+    wordObjects.push(new Word(700, -160, -5, 0, "DISHONEST", 3000, 16));
 
 
     // Make box droppable
