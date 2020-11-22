@@ -42,7 +42,7 @@ class Word {
   }
 
 // Reset
-// 
+//
   reset(){
     this.htmlElementWord = $('<p>');
     $(this.htmlElementWord).text(this.text);

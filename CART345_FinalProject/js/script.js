@@ -73,30 +73,30 @@ function setup() {
   wordObjects.push(new Word(100, 0, 1, 0, "I", 150, 0));
   // AM
   wordObjects.push(new Word(500, -100, -1, 0, "AM", 1050, 1));
-  // // SORRY
+  // SORRY
   wordObjects.push(new Word(990, 50, 1, 0, "SORRY", 800, 2));
   // WAS
-  wordObjects.push(new Word(105, 142, -5, 0, "WAS", 1050, 3));
+  wordObjects.push(new Word(105, 95, -5, 0, "WAS", 1050, 3));
   // WRONG
   wordObjects.push(new Word(900, -187, 5, 0, "WRONG", 3000, 4));
   // LOVE
   wordObjects.push(new Word(0, -50, -1, 0, "LOVE", 800, 5));
   // YOU
-  wordObjects.push(new Word(1000, 0, 5, 0, "YOU", 1050, 6));
+  wordObjects.push(new Word(1000, 0, 4, 0, "YOU", 1050, 6));
   // NEED
   wordObjects.push(new Word(-8, 45, -3, 0, "NEED", 1050, 7));
   // HELP
   wordObjects.push(new Word(580, 0, 3, 0, "HELP", 3000, 8));
   // PLEASE
-  wordObjects.push(new Word(700, 160, -3, 0, "PLEASE", 3000, 9));
+  wordObjects.push(new Word(700, 75, -3, 0, "PLEASE", 3000, 9));
   // STOP
-  wordObjects.push(new Word(-8, -187, 1, 0, "STOP", 800, 10));
+  wordObjects.push(new Word(-8, -220, 1, 0, "STOP", 800, 10));
   // WANT
   wordObjects.push(new Word(500, -140, -3, 0, "WANT", 1050, 11));
   // THIS
-  wordObjects.push(new Word(300, 100, 1, 0, "THIS", 1050, 12));
+  wordObjects.push(new Word(300, -60, 1, 0, "THIS", 1050, 12));
   // IN
-  wordObjects.push(new Word(1380, 142, -5, 0, "IN", 1050, 13));
+  wordObjects.push(new Word(1380, -42, -5, 0, "IN", 1050, 13));
   // MY
   wordObjects.push(new Word(300, -187, 5, 0, "MY", 1050, 14));
   // OPINION
@@ -105,23 +105,23 @@ function setup() {
   wordObjects.push(new Word(700, -140, 3, 0, "DISAGREE", 3000, 16));
 
   // Decoy
-  wordObjects.push(new Word(0, -70, 10, 0, "DO", 1050, 0));
-  wordObjects.push(new Word(450, -187, -5, 0, "NOT", 1050, 1));
-  wordObjects.push(new Word(990, 10, -10, 0, "KNOW", 800, 2));
-  wordObjects.push(new Word(105, 160, -10, 0, "HOW", 1050, 3));
-  wordObjects.push(new Word(900, -140, -10, 0, "TO", 3000, 4));
-  wordObjects.push(new Word(0, -10, -5, 0, "SURE", 800, 5));
-  wordObjects.push(new Word(1000, 0, -1, 0, "IS", 1050, 6));
-  wordObjects.push(new Word(-8, 70, -10, 0, "IT", 1050, 7));
-  wordObjects.push(new Word(580, 40, -5, 0, "INCORRECT", 3000, 8));
-  wordObjects.push(new Word(700, 110, -1, 0, "UNSURE", 3000, 9));
-  wordObjects.push(new Word(-8, -110, -10, 0, "INSECURE", 800, 10));
-  wordObjects.push(new Word(500, -120, 1, 0, "IMPOSTER", 1050, 11));
-  wordObjects.push(new Word(300, 140, 10, 0, "FRAUD", 1050, 12));
-  wordObjects.push(new Word(1380, 142, -1, 0, "UNFORGIVABLE", 1050, 13));
-  wordObjects.push(new Word(300, -187, 10, 0, "CAN", 1050, 14));
-  wordObjects.push(new Word(800, -50, -1, 0, "LIAR", 3000, 15));
-  wordObjects.push(new Word(700, -160, -5, 0, "DISHONEST", 3000, 16));
+  wordObjects.push(new Word(0, -70, 10, 0, "DO", 1050, 17));
+  wordObjects.push(new Word(450, -250, -5, 0, "NOT", 1050, 18));
+  wordObjects.push(new Word(990, 10, -10, 0, "KNOW", 800, 19));
+  wordObjects.push(new Word(105, 95, -9, 0, "HOW", 1050, 20));
+  wordObjects.push(new Word(900, -205, -10, 0, "TO", 3000, 21));
+  wordObjects.push(new Word(0, -75, -5, 0, "SURE", 800, 22));
+  wordObjects.push(new Word(1000, -20, -1, 0, "IS", 1050, 23));
+  wordObjects.push(new Word(-8, 50, -10, 0, "IT", 1050, 24));
+  wordObjects.push(new Word(580, 20, -5, 0, "INCORRECT", 3000, 25));
+  wordObjects.push(new Word(700, 90, -1, 0, "UNSURE", 3000, 26));
+  wordObjects.push(new Word(-8, -250, -10, 0, "INSECURE", 800, 27));
+  wordObjects.push(new Word(500, -140, 1, 0, "IMPOSTER", 1050, 28));
+  wordObjects.push(new Word(300, 80, 10, 0, "FRAUD", 1050, 29));
+  wordObjects.push(new Word(1380, 25, 1, 0, "UNFORGIVABLE", 1050, 30));
+  wordObjects.push(new Word(300, -245, 10, 0, "CAN", 1050, 31));
+  wordObjects.push(new Word(800, -90, -1, 0, "LIAR", 3000, 32));
+  wordObjects.push(new Word(700, -190, -5, 0, "DISHONEST", 3000, 33));
 
 }
 

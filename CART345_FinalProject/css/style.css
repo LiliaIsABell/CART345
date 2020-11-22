@@ -55,6 +55,7 @@ body {
   position: absolute;
   z-index: 3;
   color: black;
+  font-family: 'Lemonada', cursive;
   font-size: 150px;
 }
 
